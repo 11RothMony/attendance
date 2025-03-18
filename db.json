@@ -1,0 +1,83 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "john.doe@example.com",
+      "password": "Pass@123"
+    },
+    {
+      "id": 2,
+      "email": "jane.smith@example.com",
+      "password": "Pass@123"
+    },
+    {
+      "id": 3,
+      "email": "admin@example.com",
+      "password": "Pass@123"
+    }
+  ],
+  "teachers": [
+    {
+      "id": 1,
+      "name": "Alice Johnson"
+    },
+    {
+      "id": 2,
+      "name": "Bob Carter"
+    },
+    {
+      "id": 3,
+      "name": "Emma Davis"
+    }
+  ],
+  "classes": [
+    {
+      "id": 101,
+      "subject": "Mathematics",
+      "totalStudents": 25,
+      "teacherId": 1,
+      "duration": "8:00 AM to 9:00 AM"
+    },
+    {
+      "id": 102,
+      "subject": "Physics",
+      "totalStudents": 20,
+      "teacherId": 2,
+      "duration": "9:00 AM to 10:00 AM"
+    },
+    {
+      "id": 103,
+      "subject": "Biology",
+      "totalStudents": 30,
+      "teacherId": 3,
+      "duration": "10:00 AM to 11:00 AM"
+    }
+  ],
+  "students": [
+    {
+      "id": 1,
+      "name": "Tom Brown",
+      "classId": 101
+    },
+    {
+      "id": 2,
+      "name": "Sara Wilson",
+      "classId": 101
+    },
+    {
+      "id": 3,
+      "name": "Mike Lee",
+      "classId": 102
+    },
+    {
+      "id": 4,
+      "name": "Emily Clark",
+      "classId": 103
+    },
+    {
+      "id": 5,
+      "name": "David Kim",
+      "classId": 103
+    }
+  ]
+}

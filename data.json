@@ -1,0 +1,7 @@
+{
+  "CLASSES": [
+    { "id": 1, "name": "Mathematics 101", "students": 25 },
+    { "id": 2, "name": "Physics 102", "students": 20 },
+    { "id": 3, "name": "Chemistry 103", "students": 22 }
+  ]
+}
