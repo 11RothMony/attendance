@@ -1,17 +1,17 @@
 import type { NextConfig } from "next";
+import withPWA from "next-pwa";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: true,
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "t3.ftcdn.net",
-        port: "", // Leave empty unless a specific port is required
-        pathname: "/jpg/**", // Optional: Restrict to /jpg/ paths
-      },
-    ],
+    domains: ["example.com"],
   },
 };
 
-export default nextConfig;
+export default withPWA({
+  dest: "public",
+  register: true,
+  skipWaiting: true,
+  disable: process.env.NODE_ENV === "development",
+  ...nextConfig, // Spread nextConfig at the end to merge its properties
+});

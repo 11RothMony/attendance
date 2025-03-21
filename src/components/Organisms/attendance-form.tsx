@@ -17,7 +17,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { format } from "date-fns";
-import { CalendarIcon } from "lucide-react";
+// import { CalendarIcon } from "lucide-react";
+import { CalendarCheck } from "@phosphor-icons/react";
 import { useState } from "react";
 import { useToast } from "../../../hooks/use-toast";
 
@@ -64,7 +65,8 @@ export default function AttendanceForm({ students }: AttendanceFormProps) {
                 variant="outline"
                 className="w-[240px] justify-start text-left font-normal"
               >
-                <CalendarIcon className="mr-2 h-4 w-4" />
+                {/* <CalendarIcon className="mr-2 h-4 w-4" /> */}
+                <CalendarCheck size={16} />
                 {selectedDate ? format(selectedDate, "PPP") : "Pick a date"}
               </Button>
             </PopoverTrigger>
@@ -112,7 +114,9 @@ export default function AttendanceForm({ students }: AttendanceFormProps) {
         </Table>
       </div>
       <div className="flex justify-end">
-        <Button type="submit">Update</Button>
+        <Button size={"sm"} type="submit">
+          Update
+        </Button>
       </div>
     </form>
   );

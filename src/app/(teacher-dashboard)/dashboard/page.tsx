@@ -29,7 +29,7 @@ export default function DashboardPage() {
   }, []);
   console.log(classes);
   return (
-    <div className="w-screen h-screen flex-col bg-[#fff] justify-center">
+    <div className="max-w-screen h-screen flex-col bg-[#fff] justify-center">
       <div className="container mx-auto p-6">
         <Button onClick={() => router.push("/auth")} size={"sm"}>
           <ArrowLeft size={16} />
