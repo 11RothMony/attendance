@@ -28,24 +28,20 @@ export default function AttendanceFormPage() {
   useEffect(() => {
     const fetchClassData = async () => {
       try {
-        const classResponse = await fetch(
-          `http://localhost:3001/classes/${params.id}`
-        );
+        const classResponse = await fetch(`/api/classes/${params.id}`);
         if (!classResponse.ok) {
           throw new Error("Failed to fetch class data");
         }
         const classData = await classResponse.json();
         setClassItem(classData);
-        console.log("Class data:", classData);
 
         // Fetch students data after class data is fetched
-        const studentResponse = await fetch("http://localhost:3001/students");
+        const studentResponse = await fetch("/api/students");
         if (!studentResponse.ok) {
           throw new Error("Failed to fetch students data");
         }
         const studentData = await studentResponse.json();
         setStudents(studentData);
-        console.log("Student data:", studentData);
       } catch (err: unknown) {
         if (err instanceof Error) {
           setError(err.message);

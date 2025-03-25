@@ -1,0 +1,16 @@
+{
+  "teachers": [
+    {
+      "id": 1,
+      "name": "Alice Johnson"
+    },
+    {
+      "id": 2,
+      "name": "Bob Carter"
+    },
+    {
+      "id": 3,
+      "name": "Emma Davis"
+    }
+  ]
+}

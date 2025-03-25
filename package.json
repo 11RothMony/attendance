@@ -4,11 +4,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "dev": "next dev",
     "lint": "next lint",
-    "json-server": "json-server --watch db.json --port 3001"
+    "start": "next start"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.7",
@@ -28,6 +27,7 @@
     "react": "^19.0.0",
     "react-day-picker": "8.10.1",
     "react-dom": "^19.0.0",
+    "sst": "3.10.11",
     "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7",
     "yup": "^1.6.1"

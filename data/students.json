@@ -1,0 +1,29 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Tom Brown",
+      "classId": 101
+    },
+    {
+      "id": 2,
+      "name": "Sara Wilson",
+      "classId": 101
+    },
+    {
+      "id": 3,
+      "name": "Mike Lee",
+      "classId": 102
+    },
+    {
+      "id": 4,
+      "name": "Emily Clark",
+      "classId": 103
+    },
+    {
+      "id": 5,
+      "name": "David Kim",
+      "classId": 103
+    }
+  ]
+}

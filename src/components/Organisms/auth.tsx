@@ -42,7 +42,16 @@ export function Login() {
     { setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }
   ) => {
     try {
-      const response = await fetch(`http://localhost:3001/users`);
+      const response = await fetch("/api/users", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch users");
+      }
       const users = await response.json();
 
       if (users.length === 0 || users[0].password !== values.password) {

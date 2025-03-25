@@ -85,9 +85,9 @@ export default function AttendanceForm({ students }: AttendanceFormProps) {
       {/* Attendance Table */}
       <div className="rounded-md border">
         <Table>
-          <TableHeader className="">
+          <TableHeader>
             <TableRow>
-              <TableHead>ID</TableHead> {/* Added ID column header */}
+              <TableHead>ID</TableHead>
               <TableHead>Name</TableHead>
               <TableHead>Present</TableHead>
             </TableRow>
@@ -95,7 +95,7 @@ export default function AttendanceForm({ students }: AttendanceFormProps) {
           <TableBody>
             {students.map((student) => (
               <TableRow key={student.id}>
-                <TableCell>{student.id}</TableCell> {/* Added ID column */}
+                <TableCell>{student.id}</TableCell>
                 <TableCell>{student.name}</TableCell>
                 <TableCell>
                   <Checkbox
