@@ -79,7 +79,7 @@ export function Login() {
       {showAuthError && (
         <Alert
           variant={"error"}
-          className="absolute left-16 top-8 flex gap-2 text-white items-center"
+          className="absolute right-2 bottom-8 flex gap-2 text-white items-center"
         >
           <AlertTitle>
             <WarningCircle size={16} />

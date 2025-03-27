@@ -41,7 +41,7 @@ const nextConfig: NextConfig = {
 
 export default withPWA({
   dest: "public",
-  register: true,
+  register: isProd, // Only register in prod to avoid dev warnings
   skipWaiting: true,
-  disable: !isProd, // Disable PWA in development
+  disable: !isProd, // Disable in dev
 })(nextConfig as any);

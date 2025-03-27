@@ -1,5 +1,5 @@
 {
-  "name": "My PWA App",
+  "name": "Attendances App",
   "short_name": "MyApp",
   "start_url": "/",
   "display": "standalone",
