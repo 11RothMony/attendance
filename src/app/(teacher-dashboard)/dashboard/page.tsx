@@ -1,8 +1,7 @@
 "use client";
 import ClassList from "@/components/molecules/card-class-list";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, Users } from "@phosphor-icons/react";
+import { Users } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -36,27 +35,24 @@ export default function DashboardPage() {
   }, []);
 
   return (
-    <div className="max-w-screen h-screen flex-col bg-[#fff] justify-center">
+    <div className="max-w-screen min-h-screen flex-col bg-[#fff] justify-center">
       <div className="container mx-auto p-6">
-        <Button onClick={() => router.push("/auth")} size={"sm"}>
-          <ArrowLeft size={16} />
-        </Button>
         <div className="mt-8 text-center">
           <h1 className="text-3xl font-bold mb-2">Welcome, {teacherName}</h1>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground text-md">
             {user?.email} Manage your classes and students
           </p>
         </div>
         <div className="mt-2 space-y-10">
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0">
-              <CardTitle className="text-sm font-medium">
+          <Card className="flex items-center justify-between">
+            <CardHeader className=" flex-col items-center gap-5">
+              <CardTitle className="text-xl font-medium">
                 Total Classes
               </CardTitle>
-              <Users className="h-4 w-4 text-muted-foreground" />
+              <div className="text-2xl font-bold">{classes.length}</div>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">{classes.length}</div>
+              <Users size={40} />
             </CardContent>
           </Card>
           <ClassList classes={classes} />

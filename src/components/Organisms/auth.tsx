@@ -75,32 +75,32 @@ export function Login() {
   };
 
   return (
-    <>
+    <div className="h-screen w-screen flex items-center justify-center">
+      {showAuthError && (
+        <Alert
+          variant={"error"}
+          className="absolute left-16 top-8 flex gap-2 text-white items-center"
+        >
+          <AlertTitle>
+            <WarningCircle size={16} />
+          </AlertTitle>
+          <AlertDescription>{errorMessage}</AlertDescription>
+          <Button
+            className="px-0 cursor-pointer"
+            onClick={() => setShowAuthError(false)}
+            variant={"ghost"}
+            size={"icon"}
+          >
+            <X size={16} />
+          </Button>
+        </Alert>
+      )}
       <Card className="w-[400px] border-none shadow-none">
         <CardHeader className="space-y-1 flex flex-col relative items-center">
-          {showAuthError && (
-            <Alert
-              variant={"error"}
-              className="absolute left-16 top-8 flex gap-2 text-white items-center"
-            >
-              <AlertTitle>
-                <WarningCircle size={16} />
-              </AlertTitle>
-              <AlertDescription>{errorMessage}</AlertDescription>
-              <Button
-                className="px-0 cursor-pointer"
-                onClick={() => setShowAuthError(false)}
-                variant={"ghost"}
-                size={"icon"}
-              >
-                <X size={16} />
-              </Button>
-            </Alert>
-          )}
-          <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+          <div className="w-14 h-14 bg-primary rounded-full flex items-center justify-center mb-4">
             <School className="w-6 h-6 text-primary-foreground" />
           </div>
-          <CardTitle className="text-2xl font-bold text-center">
+          <CardTitle className="text-3xl font-bold text-center">
             Teacher Login
           </CardTitle>
         </CardHeader>
@@ -122,7 +122,7 @@ export function Login() {
             }) => (
               <Form className="w-full mt-4 space-y-6">
                 <div>
-                  <Label>Email</Label>
+                  <Label className="text-lg">Email</Label>
                   <Input
                     id="email"
                     name="email"
@@ -130,16 +130,18 @@ export function Login() {
                     value={values.email}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    className={
-                      errors.email && touched.email ? "border-red-500" : ""
-                    }
+                    className={` h-12 text-lg
+                      ${errors.email && touched.email ? "border-red-500" : ""}
+                    `}
                   />
                   {touched.email && errors.email && (
                     <p className="text-red-500 text-sm">{errors.email}</p>
                   )}
                 </div>
                 <div>
-                  <Label htmlFor="password">Password</Label>
+                  <Label className="text-lg" htmlFor="password">
+                    Password
+                  </Label>
                   <div className="relative">
                     <Field
                       as={Input}
@@ -150,11 +152,13 @@ export function Login() {
                       value={values.password}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      className={
-                        errors.password && touched.password
-                          ? "border-red-500"
-                          : ""
-                      }
+                      className={` h-12 text-lg
+                        ${
+                          errors.password && touched.password
+                            ? "border-red-500"
+                            : ""
+                        }
+                      `}
                     />
                     <Button
                       variant={"ghost"}
@@ -163,9 +167,9 @@ export function Login() {
                       onClick={() => setShowPassword(!showPassword)}
                     >
                       {showPassword ? (
-                        <Eye size={20} />
+                        <Eye size={28} />
                       ) : (
-                        <EyeSlash size={20} />
+                        <EyeSlash size={28} />
                       )}
                     </Button>
                   </div>
@@ -174,8 +178,9 @@ export function Login() {
                   )}
                 </div>
                 <Button
+                  size={"lg"}
                   type="submit"
-                  className="w-full  rounded-xl"
+                  className="w-full h-12 text-lg rounded-xl"
                   disabled={!isValid || !dirty}
                   // asChild={!isValid || !dirty}
                 >
@@ -186,6 +191,6 @@ export function Login() {
           </Formik>
         </CardContent>
       </Card>
-    </>
+    </div>
   );
 }

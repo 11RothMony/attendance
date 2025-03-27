@@ -18,7 +18,8 @@ import {
 } from "@/components/ui/table";
 import { format } from "date-fns";
 // import { CalendarIcon } from "lucide-react";
-import { CalendarCheck } from "@phosphor-icons/react";
+// import { CalendarCheck } from "@phosphor-icons/react";
+import { CalendarCheck } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "../../../hooks/use-toast";
 
@@ -54,19 +55,19 @@ export default function AttendanceForm({ students }: AttendanceFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-5 mt-4">
       {/* Date Picker */}
       <div className="flex gap-10">
         <div className="flex flex-col gap-2">
-          <label className="text-sm font-medium">Select Date</label>
+          <label className="text-lg font-medium">Select Date</label>
           <Popover>
             <PopoverTrigger asChild>
               <Button
-                variant="outline"
-                className="w-[240px] justify-start text-left font-normal"
+                variant={"outline"}
+                className="w-[240px] text-lg h-12 justify-start text-left font-normal"
               >
                 {/* <CalendarIcon className="mr-2 h-4 w-4" /> */}
-                <CalendarCheck size={16} />
+                <CalendarCheck size={28} />
                 {selectedDate ? format(selectedDate, "PPP") : "Pick a date"}
               </Button>
             </PopoverTrigger>
@@ -86,19 +87,20 @@ export default function AttendanceForm({ students }: AttendanceFormProps) {
       <div className="rounded-md border">
         <Table>
           <TableHeader>
-            <TableRow>
+            <TableRow className="text-lg h-14 font-bold">
               <TableHead>ID</TableHead>
               <TableHead>Name</TableHead>
               <TableHead>Present</TableHead>
             </TableRow>
           </TableHeader>
-          <TableBody>
+          <TableBody className="text-lg font-normal">
             {students.map((student) => (
               <TableRow key={student.id}>
                 <TableCell>{student.id}</TableCell>
                 <TableCell>{student.name}</TableCell>
                 <TableCell>
                   <Checkbox
+                    className="size-5"
                     checked={attendance[student.id] || false}
                     onCheckedChange={(checked) =>
                       setAttendance((prev) => ({
@@ -114,7 +116,7 @@ export default function AttendanceForm({ students }: AttendanceFormProps) {
         </Table>
       </div>
       <div className="flex justify-end">
-        <Button size={"sm"} type="submit">
+        <Button className="h-12 text-md" size={"lg"} type="submit">
           Update
         </Button>
       </div>

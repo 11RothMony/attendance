@@ -1,7 +1,7 @@
 "use client";
 import AttendanceForm from "@/components/Organisms/attendance-form";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "@phosphor-icons/react";
+import { ArrowLeft, ChevronLeft } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -65,13 +65,13 @@ export default function AttendanceFormPage() {
   }
 
   return (
-    <div className="container max-h-screen mx-auto p-6">
-      <Button onClick={() => router.push("/dashboard")} size={"sm"}>
-        <ArrowLeft size={16} />
+    <div className="max-w-screen  min-h-screen p-6">
+      <Button className="" onClick={() => router.push("/dashboard")}>
+        <ArrowLeft size={28} />
       </Button>
       <div className="flex-col mt-8 flex items-center justify-center">
         <h1 className="text-4xl font-bold mb-2">{classItem?.subject}</h1>
-        <div className="flex gap-2 mb-5">
+        <div className="flex  text-lg gap-2 mb-5">
           <h2 className="font-medium">Duration</h2>
           <h2>{classItem?.duration}</h2>
         </div>

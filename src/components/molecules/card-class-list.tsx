@@ -28,15 +28,15 @@ export default function ClassList({ classes }: ClassListProps) {
       {classes.map((classItem) => (
         <Card key={classItem.id} className="hover:shadow-lg transition-shadow">
           <CardHeader>
-            <CardTitle>{classItem.subject}</CardTitle>
-            <CardDescription>
+            <CardTitle className="text-xl">{classItem.subject}</CardTitle>
+            <CardDescription className="text-lg">
               {classItem.totalStudents} Students Enrolled
             </CardDescription>
           </CardHeader>
           <CardContent>
             <Button
               onClick={() => router.push(`/attendance-form/${classItem.id}`)}
-              className="w-full cursor-pointer"
+              className="w-full text-md h-11 cursor-pointer"
             >
               View Class
             </Button>
