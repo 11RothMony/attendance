@@ -45,8 +45,11 @@ export default function InstallButton() {
   if (!isInstallable) return null;
 
   return (
-    <Button className="text-lg" onClick={handleInstallClick}>
-      <Download size={22} />
+    <Button
+      className="text-lg bg-blue-500 p-7 rounded-full"
+      onClick={handleInstallClick}
+    >
+      <Download size={25} />
       Install
     </Button>
   );

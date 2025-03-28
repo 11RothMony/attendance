@@ -1,3 +1,4 @@
+import InstallButton from "@/components/molecules/install-button";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -23,7 +24,12 @@ export default function RootLayout({
         <meta name="theme-color" content="#000000" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body>{children}</body>
+      <body>
+        <div className=" bottom-4 fixed right-4">
+          <InstallButton />
+        </div>
+        {children}
+      </body>
     </html>
   );
 }
